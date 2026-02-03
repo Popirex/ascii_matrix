@@ -50,7 +50,13 @@ void vai_a(int riga, int colonna) {
 
 
 void handler_interruzione(int signum){
+    pulisci_schermo();
     mostra_cursore();
+    dormi_ms(500);
+    printf("\nMADE BY POPIREX\n");
+    dormi_ms(500);
+    printf("\nThank you for using my program!\n");
+    dormi_ms(500);
     exit(0);
 }
 
@@ -69,8 +75,8 @@ int main(int argc, char *argv[]){
     for(int i = 0; i < numero_gocce; i++){
         gocce[i].x = rand() % (larghezza - 1);
         gocce[i].y = rand() % altezza;
-        gocce[i].carattere = alfabeto[rand() % DIM_ALFABETO];
         gocce[i].velocita = 1 +  (rand() % MAX_VEL);
+        gocce[i].carattere = alfabeto[rand() % DIM_ALFABETO];
     }
 
     nascondi_cursore();
@@ -106,7 +112,7 @@ int main(int argc, char *argv[]){
 
             vai_a(gocce[i].y, gocce[i].x);
             printf("%c", gocce[i].carattere);
-
+            
         }
 
         fflush(stdout);
