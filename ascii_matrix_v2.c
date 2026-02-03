@@ -7,7 +7,6 @@
 
 #define DIM_ALFABETO 26
 #define MAX_VEL 2
-#define NUM_GOCCE 2000
 
 
 void ottieni_dimensioni_terminale(int *righe, int *colonne){
@@ -58,14 +57,16 @@ void handler_interruzione(int signum){
 int main(int argc, char *argv[]){
 
     signal(SIGINT, handler_interruzione);
-    int altezza, larghezza;
+    int altezza, larghezza, numero_gocce;
 
     ottieni_dimensioni_terminale(&altezza, &larghezza);
 
-    srand(time(NULL));
-    Goccia gocce[NUM_GOCCE];
+    numero_gocce = larghezza;
 
-    for(int i = 0; i < NUM_GOCCE; i++){
+    srand(time(NULL));
+    Goccia gocce[numero_gocce];
+
+    for(int i = 0; i < numero_gocce; i++){
         gocce[i].x = rand() % (larghezza - 1);
         gocce[i].y = rand() % altezza;
         gocce[i].carattere = alfabeto[rand() % DIM_ALFABETO];
@@ -81,7 +82,7 @@ int main(int argc, char *argv[]){
 
     while(1){
 
-        for(int i = 0; i < NUM_GOCCE; i++){
+        for(int i = 0; i < numero_gocce; i++){
 
 
             // cancello la vecchia goccia

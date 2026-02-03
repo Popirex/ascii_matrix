@@ -1,7 +1,0 @@
-IDEE PER LA ASCII FALL IN C:
-----------------------------
-
-1 ->    trovare dimensione terminale con syscall o libreria C.
-
-2 ->    usare librearia random per avere caratteri casuali.
-
