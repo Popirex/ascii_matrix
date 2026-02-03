@@ -7,7 +7,7 @@
 
 #define DIM_ALFABETO 26
 #define MAX_VEL 2
-#define NUM_GOCCE 100
+#define NUM_GOCCE 2000
 
 
 void ottieni_dimensioni_terminale(int *righe, int *colonne){
@@ -73,6 +73,10 @@ int main(int argc, char *argv[]){
     }
 
     nascondi_cursore();
+    pulisci_schermo();
+
+    printf("altezza: %d \n larghezza: %d \n", altezza, larghezza);
+    dormi_ms(2000);
     pulisci_schermo();
 
     while(1){
