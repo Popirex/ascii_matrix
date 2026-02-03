@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 #define DIM_ALFABETO 26
-#define DIM_SPAZI 4
+#define DIM_SPAZI 8
 #define DIM_TEMPO_MS 20
 
 void dormi_ms(int millisecondi){
@@ -19,7 +19,11 @@ char *spazi[] = {
     " ",      
     "  ",     
     "   ",    
-    "    "
+    "    ",
+    "     ",     
+    "      ", 
+    "       ",     
+    "        "
 };
 
 long int random(void);
@@ -44,7 +48,8 @@ int main( int argc, char *argv[]){
         printf("%c%s", alfabeto[numero_alfabeto], spazi[numero_spazi]);
 
         if( (i % 10) == 0 ){
-            printf("\n");
+            int numero_spazio_singolo = rand() % (DIM_SPAZI);
+            printf("\n%s", spazi[numero_spazio_singolo]);
         }
         i++;
 
